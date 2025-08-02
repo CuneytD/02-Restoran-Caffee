@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+	<%- include('partials/head') %>
+	<body>
+		
+	<div class="fh5co-loader"></div>
+	
+	<div id="page">
+	<nav class="fh5co-nav" role="navigation">
+		<!-- <div class="top-menu"> -->
+			<%- include('partials/navbar') %>
+		<!-- </div> -->
+	</nav>
+
+	<header id="fh5co-header" class="fh5co-cover js-fullheight" role="banner" style="background-image: url(images/hero_1.jpeg);" data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<div class="display-t js-fullheight">
+						<div class="display-tc js-fullheight animate-box" data-animate-effect="fadeIn">
+							<h1>See <em>Our</em> Gallery</h1>
+							<h2>Brought to you by <a href="http://freehtml5.co/" target="_blank">Gallery</a></h2>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	
+	<div id="fh5co-gallery" class="fh5co-section">
+
+		<%- include('partials/fotoGallery', { galleryOne: galleryOne }) %>
+	</div>
+
+	<div id="fh5co-featured-testimony" class="fh5co-section">
+		<%- include('partials/Testimony') %>
+	</div>
+	
+	<div id="fh5co-started" class="fh5co-section animate-box" style="background-image: url(images/hero_1.jpeg);" data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<%- include('partials/booktable') %>
+	</div>
+
+	<footer id="fh5co-footer" role="contentinfo" class="fh5co-section">
+		<%- include('partials/footer') %>
+	</footer>
+	</div>
+
+	<%- include('partials/javascript') %>
+
+	<script>
+		Zoomerang
+      .config({
+        maxHeight: 600,
+        maxWidth: 900,
+        bgColor: '#000',
+        bgOpacity: .85
+      })
+      .listen('[data-trigger="zoomerang"]')
+	</script>
+
+	</body>
+</html>
+

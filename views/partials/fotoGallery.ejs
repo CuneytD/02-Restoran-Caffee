@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 fh5co-heading animate-box">
+            <h2>Our Gallery</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ab debitis sit itaque totam,
+                        a maiores nihil, nulla magnam porro minima officiis! Doloribus aliquam voluptates corporis et
+                        tempora consequuntur ipsam, itaque, nesciunt similique commodi omnis. Ad magni perspiciatis,
+                        voluptatum repellat.</p>
+                </div>
+            </div>
+        </div>
+        <% galleryOne.forEach( item=> { %>
+            <div class="col-md-3 col-sm-3 fh5co-gallery_item">
+                <div class="fh5co-bg-img" style="background-image: url(images/<%=item.imageUrl1%>);"
+                    data-trigger="zoomerang">
+                </div>
+                <div class="fh5co-bg-img" style="background-image: url(images/<%=item.imageUrl2%>);"
+                    data-trigger="zoomerang">
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 fh5co-gallery_item">
+                <div class="fh5co-bg-img fh5co-gallery_big" style="background-image: url(images/<%=item.imageUrl3%>);"
+                    data-trigger="zoomerang"></div>
+            </div>
+            <div class="col-md-3 col-sm-3 fh5co-gallery_item">
+                <div class="fh5co-bg-img" style="background-image: url(images/<%=item.imageUrl4%>);"
+                    data-trigger="zoomerang">
+                </div>
+                <div class="fh5co-bg-img" style="background-image: url(images/<%=item.imageUrl5%>);"
+                    data-trigger="zoomerang">
+                </div>
+            </div>
+            <% }) %>
+    </div>
+</div>
