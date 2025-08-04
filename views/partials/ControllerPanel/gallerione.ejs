@@ -1,0 +1,99 @@
+<div class="col urun-kart d-none" data-kategori="gallerione">
+    <div class="card h-100 shadow-sm">
+        <% if (item.imageUrl1) { %>
+            <img src="<%= item.imageUrl1.startsWith('http') ? item.imageUrl1 : ('/images/' + item.imageUrl1) %>"
+                class="card-img-top" />
+            <% } %>
+            <% if (item.imageUrl2) { %>
+            <img src="<%= item.imageUrl2.startsWith('http') ? item.imageUrl2 : ('/images/' + item.imageUrl2) %>"
+                class="card-img-top" />
+            <% } %>
+            <% if (item.imageUrl3) { %>
+            <img src="<%= item.imageUrl3.startsWith('http') ? item.imageUrl3 : ('/images/' + item.imageUrl3) %>"
+                class="card-img-top" />
+            <% } %>
+            <% if (item.imageUrl4) { %>
+            <img src="<%= item.imageUrl4.startsWith('http') ? item.imageUrl4 : ('/images/' + item.imageUrl4) %>"
+                class="card-img-top" />
+            <% } %>
+            <% if (item.imageUrl5) { %>
+                <img src="<%= item.imageUrl5.startsWith('http') ? item.imageUrl5 : ('/images/' + item.imageUrl5) %>"
+                    class="card-img-top" />
+            <% } %>
+
+
+            <div class="card-body">
+                                                    <p class="card-text"><small class="text-muted">Anasayfa: <%=
+                                                                item.isHome ? "Evet" : "Hayır" %> |
+                                                                Aktif: <%= item.isActive ? "Evet" : "Hayır" %></small>
+                                                    </p>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+            <form action="/panel/gallerione/<%= item.id %>/sil" method="POST"
+                                                        onsubmit="return confirm('Bu ürünü silmek istediğinize emin misiniz?');">
+                                                        <button type="submit" class="btn btn-danger btn-sm">Sil</button>
+            </form>
+            <button type="button" class="btn btn-outline-primary btn-sm"
+                                                        data-bs-toggle="modal"
+                                                        data-bs-target="#editModalFull<%= item.id %>">Güncelle</button>
+        </div>
+    </div>
+</div>
+
+<!-- Güncelleme Modalı -->
+<div class="modal fade" id="editModalFull<%= item.id %>" tabindex="-1"
+    aria-labelledby="editModalFullLabel<%= item.id %>" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <form action="/panel/gallerione/<%= item.id %>/guncelle" method="POST">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editModalFullLabel<%= item.id %>">Tam Menü Güncelle</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+                </div>
+                <div class="modal-body row g-3">
+                    <div class="col-md-4">
+                        <label class="form-label">Resim 1</label>
+                        <input type="text" name="imageUrl1" class="form-control" value="<%= item.imageUrl1 %>"
+                            required />
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Resim 2</label>
+                        <input type="text" name="imageUrl2" class="form-control" value="<%= item.imageUrl2 %>"
+                            required />
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Resim 3 Büyük Resim</label>
+                        <input type="text" name="imageUrl3" class="form-control" value="<%= item.imageUrl3 %>"
+                            required />
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Resim 4</label>
+                        <input type="text" name="imageUrl4" class="form-control" value="<%= item.imageUrl4 %>"
+                            required />
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Resim 5</label>
+                        <input type="text" name="imageUrl5" class="form-control" value="<%= item.imageUrl5 %>"
+                            required />
+                    </div>
+                    <div class="col-md-3 d-flex align-items-center">
+                        <div class="form-check me-3">
+                            <input class="form-check-input" type="checkbox" name="isActive" <%=item.isActive ? 'checked'
+                                : '' %> />
+                            <label class="form-check-label">Aktif</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="isHome" <%=item.isHome ? 'checked'
+                                : '' %> />
+                            <label class="form-check-label">Ana Sayfa</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,12 +1,12 @@
 const db = require('../data/db');
-const GalleryOne = require('../models/galleryOne');
+const Gallerione = require('../models/gallerione');
 
 
 
 exports.renderGallery = (req, res) => {
-    db.all('SELECT * FROM galleryOne', (err, galleryOne) => {
-        if(err) return res.status(500).send('Database Error (galleryOne)');   
+    db.all('SELECT * FROM gallerione', (err, gallerione) => {
+        if(err) return res.status(500).send('Database Error (gallerione)');   
 
-        res.render('gallery', { galleryOne });
+        res.render('gallery', { gallerione });
     });    
 };

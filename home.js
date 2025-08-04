@@ -17,6 +17,12 @@ const fotoGalleryRoutes = require('./routes/fotoGalleryRoutes');
 const aboutRoutes = require('./routes/aboutRoutes');
 const contactRoutes = require('./routes/contactRoutes');
 
+
+// Admin Routes
+app.use('/panel', require('./routes/AdminRoutesPanel/panelRoutes'));
+
+
+// index Routes
 app.use('/contact', contactRoutes);
 app.use('/about', aboutRoutes);
 app.use('/gallery', fotoGalleryRoutes);
