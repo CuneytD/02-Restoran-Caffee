@@ -25,7 +25,14 @@
 
       <!-- Sidebar -->
       <nav class="col-md-2 bg-light border-end p-3 sidebar">
-        <h5>Kategoriler</h5>
+        <div class="text-center">
+            <h5>Kategoriler</h5>
+        </div>        
+        <hr>
+        <div class="text-center">
+          <a href="/logout" class="btn btn-danger">Çıkış Yap</a>
+        </div>
+        <hr>
         <div class="list-group">
           <% if (typeof todaymenu !== 'undefined') { %>
             <a href="#" class="list-group-item list-group-item-action active" onclick="showCategory('todaymenu')">Günün Yemeği (Todaymenu)</a>

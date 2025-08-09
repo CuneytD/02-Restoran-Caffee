@@ -1,6 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const panelController = require('../../controller/AdminControlerPanel/panelController');
+const panelController = require('../../controller/AdminControlerPanel/panelController')
+const auth = require('../../middleware/auth');
+
+// Buradan itibaren tüm rotalar korunur
+router.use(auth);
 
 router.get('/', panelController.getPanel);
 

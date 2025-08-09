@@ -1,6 +1,13 @@
 const db = require('../../data/db');
+const auth = require('../../middleware/auth');
+const express = require('express');
+const router = express.Router();
+
+router.use(auth);
 
 exports.getPanel = (req, res) => {
+  
+  
   
   db.all('SELECT * FROM chefmenu', (err, chefmenu) => {
     if (err) return res.status(500).send('Veritabanı hatası (chefmenu)');
