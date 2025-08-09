@@ -8,3 +8,5 @@
 ** farklı verileri tek veri tabanı üzerinden çağırmayı güncellemeyi silmeyi
 ** öğrendik.
 * kontrol panelinde daha yenilikci bir yapı kullandığımızda daha dikkatli bir panel yapısı yapmalıyız bu düzeni ayrıştırırsak yapı çöküyor. 
+* Login ve Register sayfaları ilave edilmiştir.
+* panel sayfası koruma altında.
